@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .sec-one {
+            padding: 18px;
+        }
+
+        .sec-two,
+        .sec-three,
+        .sec-four , .sec-five , .sec-six{
+            padding: 70px;
+        }
+
+        .img-wth {
+            width: 80px;
+        }
+
+        .img-wt {
+            width: 250px;
+            height: 180px;
+            box-shadow: 4px 4px 6px rgb(87, 87, 87);
+        }
+
+        button {
+            margin: 12px 0;
+        }
+
+        .padding {
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .padd {
+            padding: 15px;
+        }
+
+        .mrgin {
+            margin: 15px 0;
+        }
+
+        .featurette {
+            align-items: center;
+        }
+
+        .nav i {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <nav class=" navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <!-- <div class=""> -->
+                <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a> -->
+                <img class="img-wth"
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    </ul>
+
+                    <form class="col-12 col-lg-4 col-md-auto me-md-2 me-lg-3" role="search">
+                        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                            aria-label="Search">
+                    </form>
+
+                    <div class="text-end col-md-auto">
+                        <button type="button" class="btn btn-outline-light me-2">Login</button>
+                        <button type="button" class="btn btn-warning">Sign-up</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sec-one">
+        <div class="container">
+            <div class="px-4 py-5 mt-5 text-center">
+                <img class="img-wt d-block mx-auto mb-4"
+                    src="https://i.pinimg.com/736x/0d/cf/b5/0dcfb548989afdf22afff75e2a46a508.jpg" alt="" width="72"
+                    height="57">
+                <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sec-two bg-secondary-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="card mx-auto mrgin" style="width: 18rem;">
+                        <img class="padding" src="https://picsum.photos/id/13/367/267" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="card mx-auto mrgin" style="width: 18rem;">
+                        <img class="padding" src="https://picsum.photos/id/63/367/267" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">
+                    <div class="card mx-auto mrgin" style="width: 18rem;">
+                        <img class="padding" src="https://picsum.photos/id/18/367/267" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-three">
+
+        <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom">Hanging icons</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                    <div
+                        class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <!-- <svg class="bi" width="1em" height="1em">
+                            <use xlink:href="#toggles2" />
+                        </svg> -->
+                        <i class="fa-solid fa-paperclip"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                            sentence and probably just keep going until we run out of words.</p>
+                        <a href="#" class="btn btn-primary">
+                            Primary button
+                        </a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div
+                        class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <!-- <svg class="bi" width="1em" height="1em">
+                            <use xlink:href="#cpu-fill" />
+                        </svg> -->
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                            sentence and probably just keep going until we run out of words.</p>
+                        <a href="#" class="btn btn-primary">
+                            Primary button
+                        </a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div
+                        class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <!-- <svg class="bi" width="1em" height="1em">
+                            <use xlink:href="#tools" />
+                        </svg> -->
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <div>
+                        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                            sentence and probably just keep going until we run out of words.</p>
+                        <a href="#" class="btn btn-primary">
+                            Primary button
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-four bg-warning-subtle">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-12 col-sm-12 padd">
+                    <img class="d-block mx-auto" src="https://picsum.photos/id/38/250/350" alt="">
+                    <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                        width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg> -->
+                </div>
+                <div class="col-xxl-7 col-lg-6 col-md-12 col-sm-12">
+                    <div class="text">
+                        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
+                                class="text-body-secondary">See for yourself.</span></h2>
+                        <p class="lead">Another featurette? Of course. More placeholder content here to give you an
+                            idea
+                            of
+                            how this layout would work with some actual real-world content in place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-five bg-info-subtle">
+        <div class="container">
+            <div class=" p-3 p-md-5  text-center bg-body-tertiary bg-info-subtle">
+                <div class="col-md-6  mx-auto my-5">
+                    <h1 class="display-3 fw-bold">Designed for engineers</h1>
+                    <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
+                    <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                        <a class="icon-link" href="#">
+                            Learn more
+                            <!-- <svg class="bi"><use xlink:href="#chevron-right"/></svg> -->
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                        <a class="icon-link" href="#">
+                            Buy
+                            <!-- <svg class="bi"><use xlink:href="#chevron-right"/></svg> -->
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-device shadow-sm d-none d-md-block"></div>
+                <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+            </div>
+        </div>
+
+    </section>
+    <section class="sec-six">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-xxl-7 col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+                    <div class="text">
+                        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
+                                class="text-body-secondary">Checkmate.</span></h2>
+                        <p class="lead">And yes, this is the last block of representative placeholder content.
+                            Again,
+                            not
+                            really intended to be actually read, simply here to give you a better view of what this
+                            would
+                            look like with some actual content. Your content.</p>
+                    </div>
+                </div>
+                <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-12 col-sm-12 padd">
+                    <img class="d-block mx-auto" src="https://picsum.photos/id/41/250/350" alt="">
+                    <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                        width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Company, Inc</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="mx-2"><a class="text-body-secondary" href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li class="mx-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="mx-2"><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
