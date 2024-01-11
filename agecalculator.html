@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 50%;
+      background-color: rgb(204, 228, 248);
+    }
+
+    #birthdate {
+      width: 35%;
+      padding: 5px;
+      margin: 0 0 0 5px;
+      font-size: 17px;
+    }
+
+    #currentDate {
+      width: 35%;
+      padding: 5px;
+      margin: 0 0 0 25px;
+      font-size: 17px;
+    }
+
+    span {
+      background-color: aquamarine;
+      width: 40%;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    div {
+      padding: 20px;
+    }
+
+    p {
+      padding: 10px;
+    }
+
+    #calculate {
+      margin: 1.7rem 0;
+      padding: 8px 20px;
+      background-color: rgb(131, 254, 0);
+      font-size: 16px;
+      letter-spacing: 2px;
+      border-color: rgb(102, 255, 0);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="main">
+
+    <h1>Date Interval</h1>
+
+    <label for="birthdate">From:</label>
+    <input type="date" id="birthdate">
+    <br>
+    <br>
+
+    <label for="currentDate">To:</label>
+    <input type="date" id="currentDate"><br>
+
+    <button id="calculate">Calculate Age</button>
+  </div>
+
+  <span id="result"></span>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+
+    $(document).ready(function () {
+      $("#calculate").click(function () {
+
+        let birthdateInput = document.getElementById('birthdate').value;
+        let currentDateInput = document.getElementById('currentDate').value;
+
+        if (!birthdateInput || !currentDateInput) {
+          alert('Please enter date to calculate your age');
+          return;
+        }
+        else if (birthdateInput > currentDateInput) {
+          alert('Not valid date');
+          return;
+        }
+
+        let count = new Date(currentDateInput) - new Date(birthdateInput);
+
+        const years = Math.floor(count / (365.24 * 24 * 60 * 60 * 1000));
+        const months = Math.floor((count + (365 * 18 * 10 * 1000)) / (30.44 * 24 * 60 * 60 * 1000));
+        const days = Math.floor((count + (30 * 24 * 60)) / (24 * 60 * 60 * 1000));
+        const totalWeeks = Math.floor(count / (7 * 24 * 60 * 60 * 1000));
+
+        let resultElement = document.getElementById('result');
+        resultElement.innerHTML = `<div><h1>Date Interval between<br>${birthdateInput} and ${currentDateInput}<hr></h1> <p>Your years Are: ${years} years <br> Your months Are: ${months} months <br> Your days Are: ${days} days <br> Your weeks Are: ${totalWeeks} weeks <hr><p></div>;`
+
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
